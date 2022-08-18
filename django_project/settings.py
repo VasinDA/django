@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pages.apps.PagesConfig', # from pages/apps.py
+    'pages.apps.PagesConfig',
+    'posts.apps.PostsConfig'
 ]
 
 MIDDLEWARE = [
