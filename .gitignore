@@ -1,6 +1,10 @@
-.venv
-django_project/__pycache__
-pages/__pycache__
-pages/migrations/__pycache__
+*.pyc
+__pycache__
+.venv/
+django_project/__pycache__/
+pages/migrations/__pycache__/
+__pycache__/
+pages/__pycache__/
+posts/__pycache__/
 
 
