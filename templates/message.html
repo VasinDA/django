@@ -3,7 +3,9 @@
 <h1>Message board</h1>
 <ul>
     {% for message in message_list %}
-    <li><a href="mailto:>{{ message.email }}">{{ message.email }}</a> - {{ message.text }}</li>
+    <li><a href="mailto:>{{ message.email }}">{{ message.email }}</a><br>
+        {{ message.text }}</li>
+    <br>
     {% endfor %}
 </ul>
 {% endblock content %}
