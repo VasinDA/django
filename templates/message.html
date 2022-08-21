@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Message board</h1>
+<ul>
+    {% for message in message_list %}
+    <li>{{ message.text }}</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
