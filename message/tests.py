@@ -9,7 +9,6 @@ class MessageTests(TestCase):
         cls.message = Message.objects.create(text="This is a test!")
    
     def test_model_content(self):
-        self.assertEqual(self.message.email, "vasinda@service.dp.ua")
         self.assertEqual(self.message.text, "This is a test!")
 
     def test_url_exists_at_correct_location(self):
