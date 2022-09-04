@@ -1,0 +1,38 @@
+body {
+    background-color: #1d2a35;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+.header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+  
+a {
+    color: white;
+}
+
+a:hover {
+    color: dimgray;
+}
+
+h1 {
+    border-bottom: 2px #ddd solid;
+    color: #ddd;
+    text-align: left;
+    padding: 5px;
+    margin: 2px;
+}
+
+.post-entry {
+    max-width: 1000px;
+}
+
+.post-entry p {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
