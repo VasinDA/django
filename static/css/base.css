@@ -3,10 +3,9 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
 }
-.header {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+header {
+    margin: 5;
+    padding: 5;
     overflow: hidden;
 }
   
