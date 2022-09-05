@@ -5,14 +5,16 @@ from .models import Message
 class MessageTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        cls.message = Message.objects.create(email="vasinda@service.dp.ua")
-        cls.message = Message.objects.create(text="This is a test!")
-   
+        cls.message = Message.objects.create(
+            email="vasinda@service.dp.ua",
+            text="This is a test!"
+            )
+           
     def test_model_content(self):
         self.assertEqual(self.message.text, "This is a test!")
 
     def test_url_exists_at_correct_location(self):
-        response = self.client.get("/message")
+        response = self.client.get("/message/")
         self.assertEqual(response.status_code, 200)
 
     def test_homepage(self):
@@ -21,4 +23,4 @@ class MessageTests(TestCase):
         self.assertTemplateUsed(response, "message.html")
         self.assertContains(response, "vasinda@service.dp.ua")
         self.assertContains(response, "This is a test!")
-        self.assertEqual(self.message.get_absolute_url(), "/messagemessage/2/")
+        self.assertEqual(self.message.get_absolute_url(), "/message/message/1/")
