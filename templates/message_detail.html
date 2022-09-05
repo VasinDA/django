@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="message-detail">
+    <h2><a href="mailto:>{{ message.email }}">{{ message.email }}</a></h2>
+    <p>{{ message.text }}</p>
+    <br>
+    <a href="{% url 'message' %}">Back to messages</a>
+</div>
+{% endblock content %}

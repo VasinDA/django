@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="post-entry">
+    <div class="post_detail">
         <h2>{{ post.title }}</h2>
         <p>{{ post.body }}</p>
+        <br>
+        <a href="{% url 'blog' %}">Back to blog</a>
     </div>
 {% endblock content %}

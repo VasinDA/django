@@ -21,3 +21,4 @@ class MessageTests(TestCase):
         self.assertTemplateUsed(response, "message.html")
         self.assertContains(response, "vasinda@service.dp.ua")
         self.assertContains(response, "This is a test!")
+        self.assertEqual(self.message.get_absolute_url(), "/messagemessage/2/")

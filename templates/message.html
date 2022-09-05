@@ -4,7 +4,8 @@
 <ul>
     {% for message in message_list %}
     <li><a href="mailto:>{{ message.email }}">{{ message.email }}</a><br>
-        {{ message.text }}</li>
+    {{ message.text }}<br>
+    <a href="{% url 'message_detail' message.pk %}">Message detail</a></li>
     <br>
     {% endfor %}
 </ul>
