@@ -4,9 +4,9 @@
     <h2><a href="mailto:>{{ message.email }}">{{ message.email }}</a></h2>
     <p>{{ message.text }}</p>
     <br>
-    <a href="{% url 'message_edit' message.pk %}">+ Edit Message Post</a>
+    <a href="{% url 'message_edit' message.pk %}">+ Edit Message</a>
     <br>
-    <a href="{% url 'message_delete' message.pk %}">Delete Message Post</a>
+    <a href="{% url 'message_delete' message.pk %}">Delete Message</a>
     <br>
     <a href="{% url 'message' %}">Back to messages</a>
 </div>
