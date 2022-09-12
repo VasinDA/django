@@ -36,24 +36,24 @@ h1 {
     overflow: hidden;
 }
 
-.edit input{
+input{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.edit textarea{
+textarea{
     background-color: #a7a7a4;
 }
 
-.edit label {
+label {
     display: block;
     position: top;
     padding-bottom: 10px
 }
 
-.edit select{
+select{
     height: 21px;
 }
 
-.edit input:hover{
+input:hover{
     background-color:  #a7a7a4;
 }
