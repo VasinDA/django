@@ -17,7 +17,7 @@ a:hover {
     color: #a7a7a4;
 }
 
-h1 {
+h2 {
     border-bottom: 2px #ddd solid;
     color: #ddd;
     text-align: left;
@@ -40,7 +40,7 @@ input{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-textarea{
+textarea {
     background-color: #a7a7a4;
 }
 
@@ -50,7 +50,7 @@ label {
     padding-bottom: 10px
 }
 
-select{
+select {
     height: 21px;
 }
 

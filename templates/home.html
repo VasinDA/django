@@ -2,8 +2,7 @@
  
 
 {% block content %}
-<h1>Home page</h1>
-
+<h2>Home page</h2>
 {% if user.is_authenticated %}
     Hi {{ user.username }}!
     <p><a  class= "btn btn-primary" href="{% url 'logout' %}">Log Out</a></p>

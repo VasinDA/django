@@ -5,7 +5,7 @@
         <h2>{{ post.title }}</h2>
         <p>{{ post.body }}</p>
         <br>
-        <a  class= "btn btn-primary mb-3" href="{% url 'post_edit' post.pk %}">+ Edit Blog Post</a>
+        <a  class= "btn btn-primary mb-3" href="{% url 'post_edit' post.pk %}">Edit Blog Post</a>
         <br>
         <a  class= "btn btn-primary" href="{% url 'post_delete' post.pk %}">Delete Blog Post</a>
         <br>
