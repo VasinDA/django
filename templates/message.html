@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Message board</h1>
-<ul>
+<h2>Message board</h2>
+<ul class="mt-3">
     {% for message in message_list %}
     <li><a href="mailto:>{{ message.email }}">{{ message.email }}</a><br>
     {{ message.text }}<br>
-    <a href="{% url 'message_detail' message.pk %}">Message detail</a></li>
+    <a  href="{% url 'message_detail' message.pk %}">Message detail</a></li>
     <br>
     {% endfor %}
 </ul>
 <div>
-    <a href="{% url 'message_new' %}">+ New Message</a>
+    <a  class= "btn btn-primary" href="{% url 'message_new' %}">New Message</a>
 </div>
 {% endblock content %}
