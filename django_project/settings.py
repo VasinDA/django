@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'message.apps.MessageConfig',
     'blog.apps.BlogConfig',
     'accounts.apps.AccountsConfig',
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'articles.apps.ArticlesConfig'
 ]
 
 MIDDLEWARE = [
@@ -129,6 +132,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 
 
 
