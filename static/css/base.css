@@ -3,19 +3,6 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
 }
-header {
-    margin: 5;
-    padding: 5;
-    overflow: hidden;
-}
-  
-a {
-    color: white;
-}
-
-a:hover {
-    color: #a7a7a4;
-}
 
 h2 {
     border-bottom: 2px #ddd solid;
