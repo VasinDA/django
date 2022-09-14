@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Articles detail{% endblock title %}
+ 
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <span class="font-weight-bold bg-dark">{{ article.title }}</span> &middot;
+        <span class="text-muted">by {{ article.author }} |
+            {{ article.date }}</span>
+    </div>
+    <div class="card-body bg-secondary post-entry">
+        {{ article.body }}
+    </div>
+    <div class="card-footer text-center text-muted">
+        <a class = "btn btn-primary" href="#">Edit</a> | <a class = "btn btn-danger" href="#">Delete</a>
+    </div>
+</div>
+<br />
+
+<a href="{% url 'article_list' %}" class="btn btn-primary">Back to articles</a>
+{% endblock content %}

@@ -48,3 +48,7 @@ input {
 input:hover{
     background-color:  #a7a7a4;
 }
+
+.card {
+    width: 50%;
+}
