@@ -3,11 +3,15 @@
 
 {% block content %}
 <h2>New article</h2>
-<div class="edit">
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
+<div class="card mt-4">
+    <div class="card-body bg-secondary">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+        </form>
+    </div>
+    <div class="card-footer text-center text-muted">
         <input class= "btn btn-primary" type="submit" value="Save">
-    </form>
+    </div>
 </div>
 {% endblock content %}

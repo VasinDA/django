@@ -12,7 +12,9 @@
         {{ article.body }}
     </div>
     <div class="card-footer text-center text-muted">
+        {% if user.is_authenticated %}
         <a class = "btn btn-primary" href="#">Edit</a> | <a class = "btn btn-danger" href="#">Delete</a>
+        {% endif %}
     </div>
 </div>
 <br />
