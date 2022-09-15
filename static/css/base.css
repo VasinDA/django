@@ -49,6 +49,10 @@ input:hover{
     background-color:  #a7a7a4;
 }
 
-.card {
+.card-list {
     width: 50%;
+}
+
+.card-edit {
+    width: 30%;
 }

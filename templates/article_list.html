@@ -7,7 +7,7 @@
     <i class="bi bi-clipboard-plus">&nbsp;Add</i></a>
 {% endif %}
 {% for article in article_list %}
-<div class="card">
+<div class="card card-list">
     <div class="card-header">
         <span class="font-weight-bold bg-dark">{{ article.title }}</span> &middot;
         <span class="text-muted">by {{ article.author }} |
@@ -20,7 +20,7 @@
         <a class = "btn btn-success" href="{% url 'article_detail' article.pk %}">Detail</a>  
         {% if user.is_authenticated %} 
         | <a class = "btn btn-primary" href="{% url 'article_edit' article.pk %}">Edit</a> | 
-        <a class = "btn btn-danger" href="#">Delete</a> 
+        <a class = "btn btn-danger" href="{% url 'article_delete' article.pk %}">Delete</a> 
         {% endif %}
     </div>
 </div>
