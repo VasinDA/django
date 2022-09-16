@@ -8,12 +8,13 @@
         <span class="text-muted">by {{ article.author }} |
             {{ article.date }}</span>
     </div>
-    <div class="card-body bg-secondary post-entry">
+    <div class="card-body bg-secondary">
         {{ article.body }}
     </div>
     <div class="card-footer text-center text-muted">
         {% if user.is_authenticated %}
-        <a class = "btn btn-primary" href="#">Edit</a> | <a class = "btn btn-danger" href="#">Delete</a>
+        <a class = "btn btn-primary" href="{% url 'article_edit' article.pk %}">Edit</a> | 
+        <a class = "btn btn-danger" href="{% url 'article_delete' article.pk %}">Delete</a>
         {% endif %}
     </div>
 </div>

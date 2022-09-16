@@ -16,7 +16,7 @@ class HomepageTests(SimpleTestCase):
     
     def test_template_content(self):
         response = self.client.get(reverse("home"))
-        self.assertContains(response, "<h1>Home page</h1>")
+        self.assertContains(response, "<h2>Home page</h2>")
 
 
 class AboutpageTests(SimpleTestCase):
@@ -34,7 +34,7 @@ class AboutpageTests(SimpleTestCase):
 
     def test_template_content(self):
         response = self.client.get(reverse("about"))
-        self.assertContains(response, "<h1>About page</h1>")
+        self.assertContains(response, "<h2>About page</h2>")
 
 class ContactspageTests(SimpleTestCase):
     def test_url_exists_at_correct_location(self):
@@ -51,6 +51,6 @@ class ContactspageTests(SimpleTestCase):
 
     def test_template_content(self):
         response = self.client.get(reverse("contacts"))
-        self.assertContains(response, "<h1>Contacts</h1>")
+        self.assertContains(response, "<h2>Contacts</h2>")
         self.assertContains(response, '<input type="text" id="Name" name="Name">')
         self.assertContains(response, '<textarea name="Text" id="Text" cols="30" rows="10">')
