@@ -3,12 +3,7 @@ __pycache__
 .venv/
 django_project/__pycache__/
 pages/migrations/__pycache__/
-__pycache__/
+*/__pycache__/
 pages/__pycache__/
 posts/__pycache__/
-
-
-django_project/__pycache__/__init__.cpython-310.pyc
-django_project/__pycache__/settings.cpython-310.pyc
-django_project/__pycache__/urls.cpython-310.pyc
-django_project/__pycache__/wsgi.cpython-310.pyc
+*.pyc
