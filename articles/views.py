@@ -21,10 +21,14 @@ class ArticleCreatelView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-class ArticleUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
+class ArticleUpdateView(UserPassesTestMixin, UpdateView):
     model = Article
     template_name = "article_edit.html"
     fields = ["title", "body"]
+    
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
 
     def test_func(self):
         obj = self.get_object()
