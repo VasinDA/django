@@ -23,12 +23,8 @@ h2 {
     overflow: hidden;
 }
 
-input{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 textarea {
-    background-color: #a7a7a4;
+    background-color: #a7a7a4;  
 }
 
 label {
@@ -42,11 +38,9 @@ select {
 }
 
 input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 20%;
-}
-
-input:hover{
-    background-color:  #a7a7a4;
+    background-color: #a7a7a4;
 }
 
 .card-list {
@@ -55,4 +49,8 @@ input:hover{
 
 .card-edit {
     width: 30%;
+}
+
+.card-edit input{
+    width: 70%;
 }

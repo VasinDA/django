@@ -3,9 +3,9 @@
 {% block title %}Articles detail{% endblock title %}
  
 {% block content %}
-<div class="card">
+<div class="card bg-black bg-opacity-50">
     <div class="card-header">
-        <span class="font-weight-bold bg-dark">{{ article.title }}</span> &middot;
+        <span class="font-weight-bold">{{ article.title }}</span> &middot;
         <span class="text-muted">by {{ article.author }} |
             {{ article.date }}</span>
     </div>
@@ -13,12 +13,12 @@
         {{ article.body }}
     </div>
     <hr>
-    <h4 class="text-dark">Comments</h4>
+    <h4 class="text-white">Comments</h4>
     {% for comment in article.comment_set.all %}
-    <p class="text-dark">{{ comment.author }} &middot; {{ comment }}</p>
+    <p class="text-white">{{ comment.author }} &middot; {{ comment }}</p>
     {% endfor %}
     <hr>
-    <div class="bg-dark p-3">
+    <div class="p-3">
         <h4>Add a comment</h4>
         <form action="" method="post">
             {% csrf_token %}

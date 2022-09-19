@@ -1,13 +1,14 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block title %}Article New{% endblock title %}
 
 {% block content %}
 <h2>New article</h2>
 <form action="" method="post">
-    <div class="card mt-4 card-edit">
+    <div class="card mt-4 card-edit bg-black bg-opacity-50">
         <div class="card-body bg-secondary">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form|crispy }}
         </div>
         <div class="card-footer text-center text-muted">
             <input class= "btn btn-primary" type="submit" value="Save">

@@ -10,22 +10,23 @@ from .models import Article
 class CommentGet(DetailView):
     model = Article
     template_name = "article_detail.html"
-   
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["form"] = CommentForm()
         return context
  
-class CommentPost(SingleObjectMixin, FormView):
+class CommentPost(LoginRequiredMixin, SingleObjectMixin, FormView):
     model = Article
     form_class = CommentForm
     template_name = "article_detail.html"
-   
+
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         return super().post(request, *args, **kwargs)
-   
+      
     def form_valid(self, form):
+        
         comment = form.save(commit=False)
         comment.article = self.object
         comment.save()
@@ -34,8 +35,7 @@ class CommentPost(SingleObjectMixin, FormView):
     def get_success_url(self):
         article = self.get_object()
         return reverse("article_detail", kwargs={"pk": article.pk})
-
-
+   
 class ArticleListView(ListView):
     model = Article
     template_name = "article_list.html"
@@ -48,7 +48,7 @@ class ArticleDetailView(View):
     def post(self, request, *args, **kwargs):
         view = CommentPost.as_view()
         return view(request, *args, **kwargs)
-
+        
 class ArticleCreatelView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = "article_new.html"
