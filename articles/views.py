@@ -24,7 +24,7 @@ class CommentPost(LoginRequiredMixin, SingleObjectMixin, FormView):
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         return super().post(request, *args, **kwargs)
-      
+            
     def form_valid(self, form):
         
         comment = form.save(commit=False)
