@@ -13,7 +13,9 @@ class CommentGet(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["form"] = CommentForm()
+        form_user_login = CommentForm()
+        form_user_login.author = self.request.user
+        context["form"] = form_user_login
         return context
  
 class CommentPost(LoginRequiredMixin, SingleObjectMixin, FormView):
