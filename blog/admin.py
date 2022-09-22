@@ -1,4 +1,15 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, CommentPost
+
+class CommentInline(admin.TabularInline):
+    model = Post
+    extra = 3 # how much empty lines to show
+
  
-admin.site.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    inlines = [
+        CommentInline,
+    ]
+ 
+admin.site.register(Post, PostAdmin)
+admin.site.register(CommentPost)

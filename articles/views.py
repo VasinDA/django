@@ -7,18 +7,16 @@ from django.views.generic.detail import SingleObjectMixin
 from django.urls import reverse_lazy, reverse
 from .models import Article
  
-class CommentGet(LoginRequiredMixin, DetailView):
+class CommentGet(DetailView):
     model = Article
     template_name = "article_detail.html"
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        form_user_login = CommentForm()
-        form_user_login.author = self.request.user
-        context["form"] = form_user_login
+        context["form"] = CommentForm()
         return context
  
-class CommentPost(SingleObjectMixin, FormView):
+class CommentPost(LoginRequiredMixin, SingleObjectMixin, FormView):
     model = Article
     form_class = CommentForm
     template_name = "article_detail.html"
@@ -28,7 +26,7 @@ class CommentPost(SingleObjectMixin, FormView):
         return super().post(request, *args, **kwargs)
             
     def form_valid(self, form):
-        
+        form.author = self.request.user
         comment = form.save(commit=False)
         comment.article = self.object
         comment.save()

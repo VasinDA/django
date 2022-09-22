@@ -4,6 +4,20 @@
     <div class="post_detail">
         <h2>{{ post.title }}</h2>
         <p>{{ post.body }}</p>
+        <hr>
+        <h4 class="text-white">Comments</h4>
+        {% for comment in post.comment_set.all %}
+        <p class="text-white">{{ comment.author }} &middot; {{ comment }}</p>
+        {% endfor %}
+        <hr>
+        <div class="p-3">
+            <h4>Add a comment</h4>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-success ml-2" type="submit">Save</button>
+            </form>
+        </div>
         <br>
         <a  class= "btn btn-primary mb-3" href="{% url 'post_edit' post.pk %}">Edit Blog Post</a>
         <br>
