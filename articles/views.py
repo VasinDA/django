@@ -16,7 +16,17 @@ class CommentGet(DetailView):
         context["form"] = CommentForm()
         return context
  
-class CommentPost(LoginRequiredMixin, SingleObjectMixin, FormView):
+class CommentAuthorCreate(LoginRequiredMixin, CreateView):
+    model = Article
+    form_class = CommentForm
+    template_name = "article_detail.html"
+    fields = ["comment"]
+
+    def form_valid(self,form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+class CommentPost(SingleObjectMixin, FormView):
     model = Article
     form_class = CommentForm
     template_name = "article_detail.html"
@@ -26,7 +36,7 @@ class CommentPost(LoginRequiredMixin, SingleObjectMixin, FormView):
         return super().post(request, *args, **kwargs)
             
     def form_valid(self, form):
-        form.author = self.request.user
+        form = CommentAuthorCreate.form_valid(form)
         comment = form.save(commit=False)
         comment.article = self.object
         comment.save()
@@ -44,7 +54,7 @@ class ArticleDetailView(View):
     def get(self, request, *args, **kwargs):
         view = CommentGet.as_view()
         return view(request, *args, **kwargs)
-   
+    
     def post(self, request, *args, **kwargs):
         view = CommentPost.as_view()
         return view(request, *args, **kwargs)
