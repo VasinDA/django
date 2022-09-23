@@ -16,7 +16,7 @@ class CommentGet(DetailView):
         context["form"] = CommentForm()
         return context
  
-class CommentPost(LoginRequiredMixin, SingleObjectMixin, FormView):
+class CommentPost(SingleObjectMixin, FormView):
     model = Post
     form_class = CommentForm
     template_name = "post_detail.html"
@@ -26,7 +26,7 @@ class CommentPost(LoginRequiredMixin, SingleObjectMixin, FormView):
         return super().post(request, *args, **kwargs)
             
     def form_valid(self, form):
-        form.author = self.request.user
+        
         comment = form.save(commit=False)
         comment.post = self.object
         comment.save()

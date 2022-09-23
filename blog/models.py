@@ -22,4 +22,4 @@ class CommentPost(models.Model):
         return self.comment
    
     def get_absolute_url(self):
-        return reverse("blog")
+        return reverse("post_detail")
